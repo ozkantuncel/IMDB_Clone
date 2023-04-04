@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IMDB Clone</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+
+
+</resources>
