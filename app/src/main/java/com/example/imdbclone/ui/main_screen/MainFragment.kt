@@ -5,19 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.imdbclone.R
-import com.example.imdbclone.data.model.Actor
-import com.example.imdbclone.data.model.Movies
 import com.example.imdbclone.databinding.MainFragmentBinding
 import com.example.imdbclone.ui.main_screen.adapter.MainFragmentTopAdapter
+import com.example.imdbclone.ui.main_screen.viewmodel.MainFragmentViewModel
+import com.google.android.material.chip.Chip
 
 class MainFragment : Fragment() {
     private lateinit var binding: MainFragmentBinding
-    private var movies = mutableListOf<Movies>()
-    private var actor = mutableListOf<Actor>()
-
-    private var pictures = mutableListOf<Int>()
-
+    private lateinit var viewModel: MainFragmentViewModel
+    private val categories = listOf("Hepsi","Drama","Komedi","Gerlim","Daha Fazla.")
+    private var selectedCategoryIndex = 0
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,24 +31,29 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var actor1 = Actor(0, "Sam Worthington", 5)
-        actor.add(actor1)
+        viewModel.moviesTopRec.observe(viewLifecycleOwner){
+            val adapterTop = MainFragmentTopAdapter(requireContext(),it,viewModel)
+            binding.mainTopAdapter = adapterTop
+        }
 
-        pictures.addAll(listOf(R.drawable.avatar_back_pic, R.drawable.avatar_pic))
+        cratedChip()
 
-        var movies1 = Movies(
-            0,
-            "Avatar 2",
-            "2022",
-            "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora",
-            "James Cameron",
-            "James Cameron",
-            actor,
-            pictures
-        )
-        movies.add(movies1)
 
-        val adapterTop = MainFragmentTopAdapter(requireContext(),movies)
-        binding.mainTopAdapter = adapterTop
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val tempViewModel:MainFragmentViewModel by viewModels()
+        viewModel = tempViewModel
+    }
+
+    fun cratedChip(){
+        for(i in categories.indices){
+            val chip = layoutInflater.inflate(R.layout.chip_main, null, false) as Chip
+            chip.text = categories[i]
+            chip.isClickable = true
+            chip.isChecked = i == selectedCategoryIndex
+            binding.filterChipGroup.addView(chip)
+        }
     }
 }

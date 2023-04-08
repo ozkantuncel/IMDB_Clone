@@ -2,10 +2,11 @@
     <string name="app_name">IMDB Clone</string>
     <string name="action_settings">Settings</string>
     <string name="recommend">Bugün öne çıkanlar</string>
-    <string name="watch_list">İzleme Listesinden</string>
+    <string name="watch_list">İzleme listesinden</string>
     <string name="show_all">TÜMÜNÜ GÖSTER</string>
     <string name="watch_list_bottom">İzleme listesinde izlenecek programlar ve filmler mevcut</string>
     <string name="users_likes_list">İzleyicilerin en sevdikleri</string>
     <string name="users_likes_bottom">Bu haftanın en iyi televizyon ve filmleri</string>
+    <string name="add_button">İzleme listesine alındı</string>
 
 </resources>

@@ -6,6 +6,7 @@ import java.io.Serializable
 data class Movies(
     val id: Int,
     val title: String,
+    val rating:String,
     val relData: String,
     val des: String,
     val director: String,
