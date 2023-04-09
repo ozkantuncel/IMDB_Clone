@@ -19,7 +19,7 @@
             android:id="@+id/imag_back"
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:scaleType = "fitStart"
+            android:scaleType = "fitXY"
             app:imageResource="@{moviesData.pictures[1]}" />
 
 
@@ -30,9 +30,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/remove_pic"
-            app:tint="@color/yellow" />
+            android:scaleType="fitStart"
+            android:alpha="0.60"
+            android:src="@drawable/add_pic"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:textAlignment="center"
                 android:textSize="12sp"
                 android:layout_gravity="center_horizontal"/>
-            
+
             <Button
                 android:id="@+id/textButton"
                 android:layout_width="wrap_content"
@@ -91,13 +91,10 @@
                 android:textSize="11sp"
                 android:layout_gravity="bottom|center"
                 android:textColor="@color/blue"
-                android:text="@string/add_button"
-                app:icon="@drawable/done_pic"
+                android:text="@string/watch_button"
                 app:strokeColor = "@color/black"
                 app:strokeWidth = "0.5dp"
-                app:iconTint="@color/blue"
-                app:iconSize = "10dp"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
         </LinearLayout>
 

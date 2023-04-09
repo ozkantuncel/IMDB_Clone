@@ -7,16 +7,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imdbclone.R
 import com.example.imdbclone.data.model.Movies
-import com.example.imdbclone.databinding.TopRecBinding
+import com.example.imdbclone.databinding.BottomRecBinding
 import com.example.imdbclone.ui.main_screen.viewmodel.MainFragmentViewModel
 
-class MainFragmentTopAdapter(
+class MainFragmentBottomAdapter(
     var mContext: Context,
     private val films: List<Movies>,
     private val viewModel: MainFragmentViewModel
-) : RecyclerView.Adapter<MainFragmentTopAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<MainFragmentBottomAdapter.ViewHolder>()  {
 
-    inner class ViewHolder(private var binding: TopRecBinding) :
+    inner class ViewHolder(private var binding: BottomRecBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Movies) {
             binding.moviesData = item
@@ -25,9 +25,9 @@ class MainFragmentTopAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding: TopRecBinding = DataBindingUtil.inflate(
+        val binding: BottomRecBinding = DataBindingUtil.inflate(
             LayoutInflater.from(mContext),
-            R.layout.top_rec,
+            R.layout.bottom_rec,
             parent,
             false
         )
@@ -42,6 +42,4 @@ class MainFragmentTopAdapter(
         val film = films[position]
         holder.bind(film)
     }
-
-
 }

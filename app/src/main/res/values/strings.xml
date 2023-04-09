@@ -8,5 +8,6 @@
     <string name="users_likes_list">İzleyicilerin en sevdikleri</string>
     <string name="users_likes_bottom">Bu haftanın en iyi televizyon ve filmleri</string>
     <string name="add_button">İzleme listesine alındı</string>
+    <string name="watch_button">Şimdi izle</string>
 
 </resources>
