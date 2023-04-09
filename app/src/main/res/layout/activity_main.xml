@@ -8,14 +8,31 @@
     tools:context=".ui.MainActivity">
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.imdbclone.ui.main_screen.MainFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:elevation="8dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/bottom_selector"
+        app:itemTextColor="@color/bottom_selector"
+        android:theme="@style/BottomNavigationView"
+        app:menu="@menu/bottom_main"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/main_fragment" />
+        app:navGraph="@navigation/nav_graph" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

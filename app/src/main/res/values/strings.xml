@@ -9,5 +9,14 @@
     <string name="users_likes_bottom">Bu haftanın en iyi televizyon ve filmleri</string>
     <string name="add_button">İzleme listesine alındı</string>
     <string name="watch_button">Şimdi izle</string>
-
+    <string name="main_item">Ana Sayfa</string>
+    <string name="search_item">Ara</string>
+    <string name="video_item">Video</string>
+    <string name="person_item">Siz</string>
+    <string name="rating_text">Bunu puanla</string>
+    <string name="metascore">Metascore</string>
+    <string name="actor_list">Oyuncu Kadrosu</string>
+    <string name="actor_list_text">OYUNCU LİSTESİ</string>
+    <string name="director_text">Yönetmen</string>
+    <string name="author_text">Yazar</string>
 </resources>

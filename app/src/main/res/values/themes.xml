@@ -5,7 +5,18 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+
     </style>
+
+    <style name="BottomNavigationView">
+        <item name="colorSecondaryContainer">@color/transparent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <item name="android:tint">@color/black</item>
+    </style>
+
+
 
     <style name="Theme.IMDBClone" parent="Base.Theme.IMDBClone" />
 </resources>

@@ -20,7 +20,7 @@ class MoviesDaoRepository {
         val actor = mutableListOf<Actor>()
         val pictures = mutableListOf<Int>()
 
-        val actor1 = Actor(0, "Sam Worthington", 5)
+        val actor1 = Actor(0, "Sam Worthington", "Aou",R.drawable.avatar_pic)
 
         actor.add(actor1)
 
