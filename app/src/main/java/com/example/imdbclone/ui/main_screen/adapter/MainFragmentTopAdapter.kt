@@ -4,10 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imdbclone.R
 import com.example.imdbclone.data.model.Movies
 import com.example.imdbclone.databinding.TopRecBinding
+import com.example.imdbclone.ui.main_screen.MainFragmentDirections
 import com.example.imdbclone.ui.main_screen.viewmodel.MainFragmentViewModel
 
 class MainFragmentTopAdapter(
@@ -20,6 +22,11 @@ class MainFragmentTopAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Movies) {
             binding.moviesData = item
+
+            binding.imagBack.setOnClickListener{
+                val g = MainFragmentDirections.mainFragmenTo(movies = item)
+                Navigation.findNavController(it).navigate(g)
+            }
 
         }
     }

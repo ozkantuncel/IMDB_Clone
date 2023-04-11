@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.imdbclone.R
 import com.example.imdbclone.databinding.FragmentDetailBinding
@@ -27,12 +28,18 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolbarDetay.setNavigationOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.mainFragment)
+        }
+
         val bundle: DetailFragmentArgs by navArgs()
         val g = bundle.movies
         binding.movieData = g
 
         val adapter = DetailFragmentAdapter(requireContext(),g.actors)
         binding.medAdapter = adapter
+
+
     }
 
 

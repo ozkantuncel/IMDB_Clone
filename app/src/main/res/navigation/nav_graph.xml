@@ -19,5 +19,8 @@
         <argument
             android:name="movies"
             app:argType="com.example.imdbclone.data.model.Movies" />
+        <action
+            android:id="@+id/detailtoMain"
+            app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
